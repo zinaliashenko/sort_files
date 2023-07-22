@@ -1,6 +1,6 @@
 # clean_folder
 
-clean_folder is a Python package for sorting files.
+clean_folder is a Python package sorting files.
 
 ## Installation
 
@@ -14,7 +14,7 @@ python setup.py install clean_folder
 ## Usage
 
 ```python
-import clean_folder.clean
+import clean_folder
 
 # renames files and folders
 change_the_name(path)
@@ -38,7 +38,7 @@ sort_the_files(list_folders_and_files)
 unpack_archives(path)
 
 # returns list_folders_and_files
-walk_the_directory
+walk_the_directory(path)
 ```
 
 ## Contributing

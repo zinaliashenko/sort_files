@@ -1,6 +1,16 @@
+[tool.poetry]
+name = "sort-files"
+version = "0.1.0"
+description = ""
+authors = ["zinaliashenko <liashenkozina@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["sort", "files"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
 [build-system]
-requires = [
-    "setuptools>=61.0",
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

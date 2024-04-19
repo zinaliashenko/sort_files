@@ -1,53 +1,59 @@
-# clean_folder
+# File Organizer Script
 
-clean_folder is a Python package sorting files.
-
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install clean_folder.
-
-```bash
-pip install clean_folder
-python setup.py install clean_folder
-```
+This Python script helps organize files in a specified folder by categorizing them into predefined folders based on their file extensions. It also renames files with Cyrillic characters to Latin characters and replaces special characters with underscores.
 
 ## Usage
 
-```python
-import clean_folder
+1. **Prerequisites**:
+   - Python 3 installed on your system.
+   - Poetry installed. If not, you can install it by following the instructions [here](https://python-poetry.org/docs/#installation).
 
-# renames files and folders
-change_the_name(path)
+2. **Install Dependencies**:
+   - Navigate to the directory containing `pyproject.toml` and run:
+     ```
+     poetry install
+     ```
 
-# creates new folders
-create_folders(path)
+3. **Run the Script**:
+   - Execute the script `main.py` in your terminal by providing the path to the folder you want to organize as a command-line argument:
+     ```
+     python main.py <path_to_folder>
+     ```
 
-# deletes empty folders
-delete_empty_folders(path)
+## Features
 
-# prints extensions and files info
-get_the_info(path)
+- **Folder Creation**: Predefined folders such as "images", "videos", "documents", "music", "archives", and "unknowns" are created automatically if they don't exist in the specified folder.
 
-# returns new_file_name
-normalize(file_name)
+- **File Sorting**: Files are sorted into respective folders based on their file extensions.
 
-# sorts files to a proper folder
-sort_the_files(list_folders_and_files)
+- **File Normalization**: Files with Cyrillic characters in their names are renamed to use Latin characters. Special characters are replaced with underscores.
 
-# unpackes archives
-unpack_archives(path)
+- **Logging**: Detailed logs are generated both in the console and a log file (`app.log`). Logs include information about file movements, renaming, and any errors encountered during the process.
 
-# returns list_folders_and_files
-walk_the_directory(path)
-```
+## Script Structure
 
-## Contributing
+- `main.py`: Main script that orchestrates the file organization process.
+- `normalize.py`: Contains functions for normalizing file names.
+- `my_logger.py`: Provides logging configuration and setup.
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+## Logging
 
-Please make sure to update tests as appropriate.
+The script uses a custom logger to log events at different severity levels:
+- **INFO**: Informational messages about the progress of the file organization process.
+- **WARNING**: Warnings for events such as file movements and empty directory deletions.
+- **ERROR**: Errors encountered during file operations.
 
-## License
+## Dependencies
 
-[MIT](https://choosealicense.com/licenses/mit/)
+- `os`: For file and directory operations.
+- `shutil`: For moving and deleting files.
+- `pathlib.Path`: For working with file paths.
+- `re`: For regular expressions used in file name normalization.
+- `logging`: For generating logs.
+
+## Notes
+
+- Ensure you have appropriate permissions to read, write, and modify files in the specified folder.
+- Make sure to back up important files before running the script, especially if it's the first time organizing files in the specified folder.
+- Review the logs (`app.log`) for any warnings or errors during the file organization process.
+

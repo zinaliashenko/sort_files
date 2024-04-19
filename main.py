@@ -10,6 +10,9 @@ from my_logger import get_logger
 # logging into file and console
 logger = get_logger('my_logger', logging.DEBUG)
 
+path_to_folder = sys.argv[1]
+PATH = Path(path_to_folder)
+
 # predefined folders and extensions
 FOLDERS = {
     "images": ['JPEG', 'PNG', 'JPG', 'SVG'],
@@ -128,9 +131,6 @@ def unzip_archives(path):
 
 
 if __name__ == '__main__':
-    #path_to_folder = sys.argv[1]
-    #PATH = Path(path_to_folder)
-    PATH = "C:/Users/Zina/Desktop/GoIT/Python Core/6.Working_with_files/Trial_folder"
     create_folders(PATH)
     sort_files(PATH)
     unzip_archives(PATH)

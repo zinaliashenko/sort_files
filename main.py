@@ -10,7 +10,7 @@ from my_logger import get_logger
 # logging into file and console
 logger = get_logger('my_logger', logging.DEBUG)
 
-# define path to the folder through the terminal
+# define the path to the folder through the terminal
 path_to_folder = sys.argv[1]
 PATH = Path(path_to_folder)
 
